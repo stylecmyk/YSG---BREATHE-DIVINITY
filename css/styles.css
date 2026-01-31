@@ -1,0 +1,361 @@
+/* ===================================
+   VARIABLES Y RESET
+   =================================== */
+:root {
+    --bg-color: #050505;
+    --card-bg: #111111;
+    --text-main: #e0e0e0;
+    --text-muted: #888888;
+    --accent: #ff0000;
+    --accent-hover: #cc0000;
+    --border-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ===================================
+   HEADER
+   =================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(5, 5, 5, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 4px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* ===================================
+   ICONOS SOCIALES
+   =================================== */
+.social-icons {
+    display: flex;
+    gap: 12px;
+    z-index: 999;
+}
+
+.social-link {
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link:hover {
+    color: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+}
+
+.social-link svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+/* ===================================
+   BOTONES
+   =================================== */
+.btn {
+    padding: 15px 40px;
+    background-color: var(--accent);
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+
+.btn-sm {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid var(--text-main);
+    color: white;
+    font-family: 'Oswald';
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-sm:hover {
+    background: white;
+    color: black;
+}
+
+/* ===================================
+   PRODUCTOS
+   =================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    border-color: var(--text-muted);
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.price-highlight {
+    color: white;
+    font-weight: bold;
+}
+
+/* ===================================
+   PACK BUNDLE
+   =================================== */
+.bundle-section {
+    background: linear-gradient(90deg, #0f0f0f 0%, #1a0505 100%);
+    padding: 80px 20px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.bundle-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+}
+
+.bundle-img {
+    flex: 1;
+    min-width: 300px;
+    height: 500px;
+    background: #222;
+    border: 2px solid var(--accent);
+    position: relative;
+}
+
+.bundle-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.discount-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent);
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-family: 'Oswald';
+    transform: rotate(5deg);
+}
+
+.bundle-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.bundle-details h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.bundle-list li {
+    margin-bottom: 10px;
+    color: var(--text-muted);
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #555;
+    margin-right: 15px;
+}
+
+.new-price {
+    font-size: 2.5rem;
+    color: var(--accent);
+    font-family: 'Oswald';
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #000;
+    color: #555;
+    font-size: 0.8rem;
+    border-top: 1px solid #222;
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .bundle-details h2 {
+        font-size: 2rem;
+    }
+
+    header {
+        padding: 15px 20px;
+    }
+
+    .social-link svg {
+        width: 16px;
+        height: 16px;
+    }
+}
