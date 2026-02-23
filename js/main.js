@@ -2,7 +2,7 @@
 // CONFIGURACIÓN
 // ===================================
 const CONFIG = {
-    numeroWhatsApp: "+59171217869" // Cambia por tu número de WhatsApp
+    numeroWhatsApp: "+59176160027" // Wasap
 };
 
 // ===================================
